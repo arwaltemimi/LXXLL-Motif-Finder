@@ -68,6 +68,10 @@ python motif_finder.py --fasta example_sequences.fasta --plot
 | LXXML | `L..ML` | Methionine variant |
 | LXXHL | `L..HL` | Histidine variant |
 
+## Example Output
+
+![Motif Map](demo_report_plot.png)
+
 ## Limitations / notes for future work
 
 - Regex-based motif matching finds **sequence pattern matches only** — it does not predict binding affinity, structural context, or whether a motif is actually surface-exposed/functional. Any hits should be treated as candidates for further structural or experimental validation, not confirmed interactors.
