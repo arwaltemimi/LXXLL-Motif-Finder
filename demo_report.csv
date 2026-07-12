@@ -1,0 +1,11 @@
+Protein ID,Motif Type,Matched Sequence,Start,End
+demo_NR_coactivator_fragment,LXXLL (canonical NR box),LWKLL,22,26
+demo_NR_coactivator_fragment,LXXLL variant (LXXIL),LWKLL,22,26
+demo_viral_NR_box_candidate,LXXLL (canonical NR box),LKKLL,13,17
+demo_viral_NR_box_candidate,LXXLL variant (LXXIL),LKKLL,13,17
+demo_viral_NR_box_candidate,LXXLL (canonical NR box),LFLLL,27,31
+demo_viral_NR_box_candidate,LXXLL variant (LXXIL),LFLLL,27,31
+demo_viral_NR_box_candidate,LXXLL (canonical NR box),LLLLL,29,33
+demo_viral_NR_box_candidate,LXXLL variant (LXXIL),LLLLL,29,33
+demo_viral_NR_box_candidate,LXXLL (canonical NR box),LQDLL,159,163
+demo_viral_NR_box_candidate,LXXLL variant (LXXIL),LQDLL,159,163
