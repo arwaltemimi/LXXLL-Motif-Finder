@@ -19,6 +19,7 @@ import argparse
 import sys
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
+from Bio import SeqIO
 
 try:
     import matplotlib
@@ -93,28 +94,13 @@ def find_motifs(sequence: str, protein_id: str = "") -> List[MotifMatch]:
 
 
 def parse_fasta(filepath: str) -> List[Tuple[str, str]]:
-    """Minimal FASTA parser. Returns list of (id, sequence) tuples."""
-    records: List[Tuple[str, str]] = []
-    current_id: Optional[str] = None
-    current_seq: List[str] = []
+    """Parse FASTA using Biopython SeqIO."""
+    records = []
 
-    with open(filepath) as f:
-        for line in f:
-            line = line.rstrip("\n")
-            if not line.strip():
-                continue
-            if line.startswith(">"):
-                if current_id is not None:
-                    records.append((current_id, "".join(current_seq)))
-                current_id = line[1:].strip().split()[0]
-                current_seq = []
-            else:
-                current_seq.append(line.strip())
-        if current_id is not None:
-            records.append((current_id, "".join(current_seq)))
+    for record in SeqIO.parse(filepath, "fasta"):
+        records.append((record.id, str(record.seq)))
 
     return records
-
 
 def fetch_uniprot_sequence(accession: str) -> Optional[str]:
     """Fetch a protein sequence from UniProt REST API by accession number."""
