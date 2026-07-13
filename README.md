@@ -15,10 +15,8 @@ LXXLL motifs (where L = leucine and X = any amino acid) are short peptide sequen
 ## Setup
 
 ```bash
-pip install requests matplotlib
+pip install requests matplotlib biopython
 ```
-
-(No other dependencies required — the FASTA parser is built in, so Biopython is not needed.)
 
 ## Usage
 
